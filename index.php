@@ -1,3 +1,13 @@
+<?php
+    require_once("config/conexion.php");
+    if (isset($_POST["enviar"]) and $_POST["enviar"]=="si") {
+        require_once("models/Usuario.php");
+        $usuario = new Usuario();
+        $usuario->login();
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head lang="es">
@@ -24,28 +34,24 @@
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box">
+                <form class="sign-box" action="" method="post" id="login-form">
                     <div class="sign-avatar">
                         <img src="public/img/avatar-sign.png" alt="">
                     </div>
                     <header class="sign-title">Iniciar Sesion</header>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Correo"/>
+                        <input type="text" id="usu_correo" name="usu_correo" class="form-control" placeholder="Correo"/>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña"/>
+                        <input type="password" id="usu_pass" name="usu_pass" class="form-control" placeholder="Contraseña"/>
                     </div>
                     <div class="form-group">
-                        <div class="checkbox float-left">
-                            <input type="checkbox" id="signed-in"/>
-                            <label for="signed-in">Recordarme</label>
-                        </div>
                         <div class="float-right reset">
                             <a href="reset-password.html">Olvide mi contraseña</a>
                         </div>
                     </div>
+                    <input type="hidden" name="enviar" class="form-control" value="si">
                     <button type="submit" class="btn btn-rounded">Ingresar</button>
-                    <p class="sign-note">no tienes cuenta <a href="sign-up.html">Registrate</a></p>
                 </form>
             </div>
         </div>
