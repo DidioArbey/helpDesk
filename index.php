@@ -24,19 +24,34 @@
 	<link href="img/favicon.ico" rel="shortcut icon">
 
 
-<link rel="stylesheet" href="public/css/separate/pages/login.min.css">
+    <link rel="stylesheet" href="public/css/separate/pages/login.min.css">
     <link rel="stylesheet" href="public/css/lib/font-awesome/font-awesome.min.css">
     <link rel="stylesheet" href="public/css/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/main.css">
+
+    <style>
+    body {
+        background-image: url('public/img/banner.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .translucent-card {
+    background-color: rgba(255, 255, 255, 0.5); /* Color de fondo con transparencia */
+    border-radius: 10px; /* Opcional: Agrega bordes redondeados para una apariencia más estilizada */
+    padding: 20px; /* Opcional: Ajusta el espaciado interno según tus necesidades */
+    }
+
+    </style>
 </head>
 <body>
 
     <div class="page-center">
         <div class="page-center-in">
             <div class="container-fluid">
-                <form class="sign-box" action="" method="post" id="login-form">
+                <form class="sign-box translucent-card" action="" method="post" id="login-form">
                     <div class="sign-avatar">
-                        <img src="public/img/avatar-sign.png" alt="">
+                        <img src="public/img/Callcenter.png" alt="">
                     </div>
                     <header class="sign-title">Iniciar Sesion</header>
 
@@ -68,18 +83,6 @@
                         }
                     }
                     ?>
-
-
-
-
-
-
-
-
-
-
-
-
                     <div class="form-group">
                         <input type="text" id="usu_correo" name="usu_correo" class="form-control" placeholder="Correo"/>
                     </div>
